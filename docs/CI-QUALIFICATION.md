@@ -1,6 +1,6 @@
 # CI and qualification policy
 
-Every pull request runs the current stable Flutter SDK and records the exact
+Every pull request runs the pinned Flutter 3.47.0 SDK and records the exact
 Flutter and Dart versions in its log. It runs dependency resolution with a
 committed lockfile check, formatting, `flutter analyze`, `flutter test` when a
 test directory exists, and the repository-layout check. M0 has no

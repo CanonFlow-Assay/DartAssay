@@ -28,7 +28,7 @@ will only be implemented after Gate A approval.
 
 ## Local contract checks
 
-Install the current stable Flutter SDK, then run:
+Install Flutter 3.47.0 (the CI pin), then run:
 
 ```sh
 flutter pub get

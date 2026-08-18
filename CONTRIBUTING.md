@@ -8,7 +8,7 @@ a framework, analyzer, generator, backend, release process, or store workflow.
 
 ## Local checks
 
-Use the current stable Flutter SDK. From the repository root, run:
+Use Flutter 3.47.0, which is pinned in CI. From the repository root, run:
 
 ```sh
 flutter pub get

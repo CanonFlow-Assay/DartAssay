@@ -1,6 +1,10 @@
 name: CI
 
+# M0 validates the repository contract. M1 adds the reference application and
+# replaces the explicit M0 not-applicable receipts with mobile qualifications.
+
 on:
+  workflow_dispatch:
   pull_request:
   push:
     branches:
@@ -17,10 +21,10 @@ jobs:
       - name: Check out source
         uses: actions/checkout@v4
 
-      - name: Set up current stable Flutter
+      - name: Set up Flutter 3.47.0
         uses: subosito/flutter-action@v2
         with:
-          channel: stable
+          flutter-version: 3.47.0
           cache: true
 
       - name: Record Flutter and Dart SDK versions
