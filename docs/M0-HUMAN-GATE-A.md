@@ -17,9 +17,12 @@ release, tag, deployment, signing, or store submission.
 
 ## Record
 
-- Decision: **PENDING**
-- Decider:
-- Date (UTC):
-- Notes or requested amendments:
+- Decision: **APPROVED**
+- Decider: Human approver (recorded on pull request #1)
+- Date (UTC): 2026-08-18
+- Notes: Approved for candidate
+  `ed0438856b38d9f1ff928446f96dc85df34c7d7a`. M1 is limited to the offline
+  reference order application and must prove defensive handling of inbound and
+  exposed collections; `final` alone is not deep immutability.
 
-No agent may start M1 while the decision is pending or rejected.
+M1 may start only after its M0 CI prerequisite is satisfied.
