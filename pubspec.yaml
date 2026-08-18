@@ -1,0 +1,10 @@
+name: dart_assay_workspace
+description: Repository workspace for the DartAssay Functional Dart and Flutter Profile.
+publish_to: none
+version: 0.1.0-dev
+
+environment:
+  sdk: '>=3.6.0 <4.0.0'
+
+# M0 intentionally has no package dependencies and no published package. The
+# root pubspec exists so CI can run Flutter's resolver and analyzer consistently.

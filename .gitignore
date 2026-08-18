@@ -1,0 +1,27 @@
+# Dart and Flutter tooling
+.dart_tool/
+.packages
+.pub/
+build/
+coverage/
+pubspec_overrides.yaml
+
+# Android and iOS generated or local files
+**/android/.gradle/
+**/android/local.properties
+**/android/key.properties
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Flutter/ephemeral/
+**/ios/Pods/
+
+# Desktop Flutter generated files
+**/linux/flutter/ephemeral/
+**/macos/Flutter/ephemeral/
+**/windows/flutter/ephemeral/
+
+# IDE and operating-system files
+.idea/
+*.iml
+.vscode/
+.DS_Store
