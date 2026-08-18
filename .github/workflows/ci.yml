@@ -1,0 +1,89 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: Flutter quality and repository contract
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up current stable Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Record Flutter and Dart SDK versions
+        run: |
+          flutter --version
+          dart --version
+
+      - name: Resolve locked dependencies
+        run: |
+          flutter pub get
+          git diff --exit-code -- pubspec.lock analysis_options.yaml
+
+      - name: Check formatting
+        run: dart format --set-exit-if-changed .
+
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Run root tests when present
+        run: |
+          if [[ -d test ]]; then
+            flutter test
+          else
+            echo 'NOT_APPLICABLE: M0 has no Dart or Flutter implementation tests; Gate A is pending.'
+          fi
+
+      - name: Check required repository layout
+        run: bash .github/scripts/check_layout.sh
+
+      - name: Run reference widget tests
+        run: |
+          if [[ -f examples/reference_order_app/pubspec.yaml ]]; then
+            pushd examples/reference_order_app
+            flutter pub get
+            flutter test test
+            popd
+          else
+            echo 'NOT_APPLICABLE: M0 has no reference widget tests; Gate A is pending.'
+          fi
+
+      - name: Run reference integration test
+        run: |
+          if [[ -f examples/reference_order_app/pubspec.yaml ]]; then
+            pushd examples/reference_order_app
+            flutter pub get
+            flutter test integration_test
+            popd
+          else
+            echo 'NOT_APPLICABLE: M0 has no reference integration test; Gate A is pending.'
+          fi
+
+  android-debug:
+    name: Android debug qualification
+    needs: quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: Record M0 platform status
+        run: echo 'NOT_APPLICABLE: Android debug qualification is an M1 activity; Gate A is pending.'
+
+  ios-no-codesign:
+    name: iOS no-code-sign qualification
+    needs: quality
+    runs-on: macos-latest
+    steps:
+      - name: Record M0 platform status
+        run: echo 'NOT_APPLICABLE: iOS no-code-sign qualification is an M1 activity; Gate A is pending.'

@@ -1,0 +1,20 @@
+# M0 intentionally configures only Dart's built-in analyzer. DartAssay does not
+# ship a custom analyzer or lint rule in this milestone.
+analyzer:
+  exclude:
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+
+linter:
+  rules:
+    - always_declare_return_types
+    - avoid_dynamic_calls
