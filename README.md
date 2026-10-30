@@ -47,3 +47,5 @@ does not create a state-management framework, backend, database, network
 client, analyzer, CLI, generator, signing flow, release, or store deployment.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) before proposing a change.
+The [phase-1 playground convergence note](docs/PLAYGROUND-CONVERGENCE.md)
+records why no new Dart feature is introduced before the existing human gate.
