@@ -34,7 +34,8 @@ jobs:
           sdk="$RUNNER_TEMP/flutter-sdk"
           git init "$sdk"
           git -C "$sdk" remote add origin https://github.com/flutter/flutter.git
-          git -C "$sdk" fetch --depth 1 origin "$FLUTTER_REVISION"
+          # Flutter derives its version from the release tag even at an exact SHA.
+          git -C "$sdk" fetch --depth 1 origin refs/tags/3.47.0:refs/tags/3.47.0
           git -C "$sdk" checkout --detach FETCH_HEAD
           test "$(git -C "$sdk" rev-parse HEAD)" = "$FLUTTER_REVISION"
           echo "$sdk/bin" >> "$GITHUB_PATH"
