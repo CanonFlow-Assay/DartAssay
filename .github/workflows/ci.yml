@@ -94,7 +94,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Record M0 platform status
-        run: echo 'INCONCLUSIVE: M1 Android debug build requires a separately qualified Android runner; no build is claimed.'
+        run: |
+          echo 'INCONCLUSIVE: M1 Android debug build requires a separately qualified Android runner; no build is claimed.'
 
   ios-no-codesign:
     name: iOS no-code-sign qualification
@@ -102,4 +103,5 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Record M0 platform status
-        run: echo 'INCONCLUSIVE: M1 iOS no-codesign build requires qualified macOS/Xcode; no build is claimed.'
+        run: |
+          echo 'INCONCLUSIVE: M1 iOS no-codesign build requires qualified macOS/Xcode; no build is claimed.'
