@@ -1,0 +1,16 @@
+name: reference_order_app
+description: Offline functional order-draft playground for DartAssay M1.
+publish_to: none
+version: 0.1.0-dev
+environment:
+  sdk: '>=3.6.0 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+flutter:
+  uses-material-design: true

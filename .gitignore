@@ -25,3 +25,6 @@ pubspec_overrides.yaml
 *.iml
 .vscode/
 .DS_Store
+
+# Fresh local qualification evidence.
+artifacts/

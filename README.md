@@ -10,13 +10,10 @@ effects, a Flutter UI shell, and deterministic tests.
 
 ## Status
 
-This repository is at **M0 — Contract**. It deliberately contains no Flutter
-application, analyzer, CLI, code generator, or publishable package. M1 is
-blocked on [Human Gate A](docs/M0-HUMAN-GATE-A.md).
+This isolated branch contains an **M1 reference-application candidate** under the recorded [Gate A approval](docs/M0-HUMAN-GATE-A.md). The pure domain/application and Flutter shell are implemented; platform and independent review obligations remain visible in the [candidate record](docs/ASTRA-M1-CANDIDATE.md).
 
 The intended reference application is documented at
-[examples/reference_order_app](examples/reference_order_app/README.md), but
-will only be implemented after Gate A approval.
+[examples/reference_order_app](examples/reference_order_app/README.md), and is runnable in this candidate.
 
 ## Read first
 
@@ -37,9 +34,7 @@ flutter analyze
 bash .github/scripts/check_layout.sh
 ```
 
-M0 has no implementation test directory, so `flutter test` is intentionally
-not applicable until Gate A admits M1. CI reports that status explicitly; M1
-will run `flutter test` for the root and reference application suites.
+The root remains a non-publishable contract workspace. Run the application tests from `examples/reference_order_app` or use `bash eng/try-playground.sh <fresh-output>`; the latter retains pending device/mobile lanes as Inconclusive.
 
 `pubspec.lock` is committed. A dependency resolution that changes it must be
 reviewed and committed intentionally.

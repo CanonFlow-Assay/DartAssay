@@ -2,11 +2,11 @@
 
 ## Current boundary
 
-The repository is in M0 until a human records approval for all Gate A items in
-`docs/M0-HUMAN-GATE-A.md`. Agents must not add the reference application,
-domain implementation, analyzer, custom lint, CLI, generator, package
-publication flow, release, tag, deployment, signing configuration, or mobile
-store workflow before then.
+Gate A approval is recorded in `docs/M0-HUMAN-GATE-A.md`. This isolated branch
+implements its M1 offline reference-order application. Preserve the approved
+sealed Result/Option values, defensive collection handling, pure domain/application
+and Flutter shell boundaries. No analyzer, custom lint, product CLI, generator,
+publication flow, release, tag, deployment, signing or store workflow is admitted.
 
 The placeholder at `skills/dart-flutter-functional/SKILL.md` is deliberately
 non-operational. Do not apply it as an agent skill until M1 proves the profile
