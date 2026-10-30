@@ -38,6 +38,8 @@ jobs:
           git -C "$sdk" checkout --detach FETCH_HEAD
           test "$(git -C "$sdk" rev-parse HEAD)" = "$FLUTTER_REVISION"
           echo "$sdk/bin" >> "$GITHUB_PATH"
+          # First launch builds flutter_tools and can print before JSON output.
+          "$sdk/bin/flutter" --version > "$RUNNER_TEMP/flutter-bootstrap.log" 2>&1
           "$sdk/bin/flutter" --version --machine > "$RUNNER_TEMP/flutter-version.json"
           jq -e --arg revision "$FLUTTER_REVISION" \
             '.frameworkRevision == $revision and .flutterVersion == "3.47.0" and .dartSdkVersion == "3.13.0"' \
